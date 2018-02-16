@@ -18,7 +18,8 @@ public class CacheBean<T> implements Delayed {
         this.id = id;
         this.name = name;
         this.data = data;
-        this.activeTime = activeTime;
+//        this.activeTime = activeTime;
+        this.activeTime = TimeUnit.NANOSECONDS.convert(activeTime, TimeUnit.MICROSECONDS) + System.nanoTime();
     }
 
     public String getId() {

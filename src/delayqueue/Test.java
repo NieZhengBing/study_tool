@@ -8,7 +8,7 @@ import java.util.concurrent.DelayQueue;
  */
 public class Test {
     public static void main(String[] args) throws InterruptedException {
-        DelayQueue<CacheBean<User>> queue = new DelayQueue<>();
+        DelayQueue<CacheBean<User>> queue = new DelayQueue<CacheBean<User>>();
         new Thread(new PutInCache(queue)).start();
         new Thread(new GetFromCache(queue)).start();
 
